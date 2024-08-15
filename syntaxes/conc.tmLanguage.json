@@ -57,11 +57,19 @@
 		  },
 		  {
 			"name": "keyword.operator.conc",
-			"match": "[+\\-*/%<>!=]=?"
+			"match": "->"
 		  },
 		  {
 			"name": "keyword.operator.conc",
-			"match": "[!.@]"
+			"match": "[+*/%<>!=]=?"
+		  },
+		  {
+			"name": "keyword.operator.conc",
+			"match": "[!.@-]"
+		  },
+		  {
+			"name": "keyword.operator.conc",
+			"match": "\\b(and|or|not)\\b"
 		  }
 		]
 	  },

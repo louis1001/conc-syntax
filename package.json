@@ -3,6 +3,11 @@
   "displayName": "conc_syntax",
   "description": "Syntax highlighting for the concatenative programming language `conc`",
   "version": "0.0.1",
+  "publisher": "louis1001",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/louis1001/conc-syntax"
+  },
   "engines": {
     "vscode": "^1.92.0"
   },
