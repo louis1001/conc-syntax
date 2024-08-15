@@ -1,0 +1,159 @@
+{
+	"name": "Conc",
+	"scopeName": "source.conc",
+	"patterns": [
+	  {
+		"include": "#comment"
+	  },
+	  {
+		"include": "#keyword"
+	  },
+	  {
+		"include": "#operator"
+	  },
+	  {
+		"include": "#literal"
+	  },
+	  {
+		"include": "#type"
+	  },
+	  {
+		"include": "#function"
+	  },
+	  {
+		"include": "#struct"
+	  },
+	  {
+		"include": "#identifier"
+	  }
+	],
+	"repository": {
+	  "comment": {
+		"patterns": [
+		  {
+			"name": "comment.line.number-sign.conc",
+			"match": "#[^\\n]*"
+		  },
+		  {
+			"name": "comment.block.conc",
+			"begin": "#\\{",
+			"end": "\\}#"
+		  }
+		]
+	  },
+	  "keyword": {
+		"patterns": [
+		  {
+			"name": "keyword.control.conc",
+			"match": "\\b(loop|if|else|while|do|end|fn|struct|true|false|break)\\b"
+		  }
+		]
+	  },
+	  "operator": {
+		"patterns": [
+		  {
+			"name": "keyword.operator.conc",
+			"match": "\\b(drop|dup|over|swap|not|or|puts|putc|debug|rot)\\b"
+		  },
+		  {
+			"name": "keyword.operator.conc",
+			"match": "[+\\-*/%<>!=]=?"
+		  },
+		  {
+			"name": "keyword.operator.conc",
+			"match": "[!.@]"
+		  }
+		]
+	  },
+	  "literal": {
+		"patterns": [
+		  {
+			"name": "constant.numeric.integer.conc",
+			"match": "\\b(0|[1-9][0-9]*)\\b"
+		  },
+		  {
+			"name": "string.quoted.double.conc",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+			  {
+				"name": "constant.character.escape.conc",
+				"match": "\\\\[nrt'\"\\\\]"
+			  }
+			]
+		  },
+		  {
+			"name": "string.quoted.single.conc",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+			  {
+				"name": "constant.character.escape.conc",
+				"match": "\\\\[nrt'\"\\\\]"
+			  }
+			]
+		  },
+		  {
+			"name": "constant.language.boolean.conc",
+			"match": "\\b(true|false)\\b"
+		  }
+		]
+	  },
+	  "type": {
+		"patterns": [
+		  {
+			"name": "storage.type.builtin.conc",
+			"match": "\\b(u8|u64|bool|ptr)\\b"
+		  },
+		  {
+			"name": "entity.name.type.user.conc",
+			"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+		  }
+		]
+	  },
+	  "function": {
+		"patterns": [
+		  {
+			"name": "meta.function.conc",
+			"begin": "\\bfn\\b\\s+([A-Za-z_][A-Za-z0-9_]*)",
+			"end": "\\bend\\b",
+			"patterns": [
+			  {
+				"name": "entity.name.function.conc",
+				"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+			  },
+			  {
+				"include": "#type"
+			  }
+			]
+		  }
+		]
+	  },
+	  "struct": {
+		"patterns": [
+		  {
+			"name": "meta.struct.conc",
+			"begin": "\\bstruct\\b\\s+([A-Za-z_][A-Za-z0-9_]*)",
+			"end": "\\bend\\b",
+			"patterns": [
+			  {
+				"name": "entity.name.struct.conc",
+				"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+			  },
+			  {
+				"include": "#type"
+			  }
+			]
+		  }
+		]
+	  },
+	  "identifier": {
+		"patterns": [
+		  {
+			"name": "variable.other.identifier.conc",
+			"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+		  }
+		]
+	  }
+	}
+  }

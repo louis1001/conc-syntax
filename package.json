@@ -1,0 +1,25 @@
+{
+  "name": "conc-syntax",
+  "displayName": "conc_syntax",
+  "description": "Syntax highlighting for the concatenative programming language `conc`",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "conc",
+      "aliases": ["Conc", "conc"],
+      "extensions": [".conc"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "conc",
+      "scopeName": "source.conc",
+      "path": "./syntaxes/conc.tmLanguage.json"
+    }]
+  }
+}
